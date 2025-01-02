@@ -1,0 +1,109 @@
+---
+
+---
+
+<section
+  id="inicio"
+  class="pt-16 md:pt-40 grid md:grid-cols-10 gap-10 items-center"
+>
+  <div
+    class="md:col-span-6 order-2 md:order-1 flex flex-col justify-center text-center font-semibold relative"
+  >
+    <span class="linea lineaTop"></span>
+    <span id="confetii" class="absolute top-2 left-0 text-3xl">🪴</span>
+    <span class="absolute top-2 right-0 text-3xl">💻</span>
+    <div>
+      <span class="text-green-400">👋¡Hola!</span><span class="">, soy</span>
+    </div>
+    <h1 class="text-5xl mt-4 font-bold">Jose Contreras<br />Martínez</h1>
+    <h2 class="text-2xl mt-4 text-green-400">Desarrollador web Frontend</h2>
+    <span class="italic mt-4 text-md"
+      >Enfocado en mejorar constantemente y seguir aprendiendo.</span
+    >
+    <div class="flex flex-col lg:flex-row gap-5 lg:gap-0 justify-around mt-5 md:mt-14 items-center">
+      <button
+        class="bg-green-600 py-3 px-6 rounded-md hover:bg-green-500 transition-colors"
+        >Descarga mi CV</button
+      >
+      <div class="flex gap-2 items-center">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-green-400 bg-[#1d1e1f] rounded-md px-3 py-1 transition-colors flex items-center gap-2 text-sm"
+          href="https://github.com/josecontrerasmt"
+          ><i class="bx bxl-github text-4xl"></i>GitHub</a
+        >
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-green-400 bg-[#1d1e1f] rounded-md px-3 py-1 transition-colors flex items-center gap-2 text-sm"
+          href="https://www.linkedin.com/in/jose-contreras-martinez-34a4bb2ab/"
+          ><i class="bx bxl-linkedin-square text-4xl"></i>LinkedIn</a
+        >
+      </div>
+    </div>
+    <span class="linea lineaBottom"></span>
+  </div>
+  <img
+    class="md:col-span-4 order-1 md:order-2 w-[280px]  md:w-[380px] rounded-full object-cover mx-auto"
+    src="/perfil.png"
+    alt="Mi foto de Perfil"
+  />
+</section>
+
+<style>
+  .linea {
+    width: 100%;
+    border: 1px solid #49de80;
+    margin: 0 auto;
+    opacity: 0.3;
+  }
+  .lineaBottom {
+    margin-top: 40px;
+  }
+  .lineaTop {
+    margin-bottom: 40px;
+  }
+</style>
+<script
+  src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"
+></script>
+<script>
+  document.getElementById("confetii")?.addEventListener("click", () => {
+    const duration = 15 * 1000,
+      animationEnd = Date.now() + duration;
+
+    let skew = 1;
+
+    function randomInRange(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    (function frame() {
+      const timeLeft = animationEnd - Date.now(),
+        ticks = Math.max(200, 500 * (timeLeft / duration));
+
+      skew = Math.max(0.8, skew - 0.001);
+
+      confetti({
+        particleCount: 1,
+        startVelocity: 0,
+        ticks: ticks,
+        origin: {
+          x: Math.random(),
+          // since particles fall down, skew start toward the top
+          y: Math.random() * skew - 0.2,
+        },
+        colors: ["#ffffff"],
+        shapes: ["circle"],
+        gravity: randomInRange(0.4, 0.6),
+        scalar: randomInRange(0.4, 1),
+        drift: randomInRange(-0.4, 0.4),
+      });
+
+      if (timeLeft > 0) {
+        requestAnimationFrame(frame);
+      }
+    })();
+  });
+</script>

@@ -1,0 +1,85 @@
+<nav id="header-nav" class="fixed w-full z-50 h-16 top-0">
+  <div
+    class="flex h-full justify-between items-center overflow-hidden max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto px-4 md:px-0"
+  >
+    <img class="w-8 md:w-10 object-cover" src="/Logo.png" alt="Mi Logo" />
+
+    <div class="hidden md:flex space-x-8 font-semibold">
+      <a href="#inicio" class="text-white hover:text-green-400 transition-colors">Inicio</a>
+      <a href="#proyectos" class="text-white hover:text-green-400 transition-colors">Proyectos</a>
+      <a href="#habilidades" class="text-white hover:text-green-400 transition-colors">Habilidades</a>
+      <a href="#sobre-mi" class="text-white hover:text-green-400 transition-colors">Sobre mi</a>
+    </div>
+    <a href="#contactame" class="bg-green-600 py-2 px-5 rounded-md hover:bg-green-500 transition-colors font-semibold hidden md:block">Contactame</a>
+    <div class="md:hidden flex items-center">
+      <button
+        id="menu-button"
+        class="text-white hover:text-green-400 focus:outline-none"
+      >
+        <svg
+          class="w-6 h-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="menu" class="md:hidden hidden">
+    <div
+      class="text-center px-4 py-4 space-y-5 border-2 rounded-lg border-white bg-[#151515]"
+    >
+      <a href="#inicio" class="text-white hover:text-green-400 link">Inicio</a>
+      <a href="#proyectos" class="block text-white hover:text-green-400 link">Proyectos</a>
+      <a href="#habilidades" class="block text-white hover:text-green-400 link">Habilidades</a>
+      <a href="#sobre-mi" class="block text-white hover:text-green-400 link">Sobre mi</a>
+      <a href="#contactame" class="block text-white hover:text-green-400 link">Contactame</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuButton = document.getElementById("menu-button");
+    const menu = document.getElementById("menu");
+    const links = document.querySelectorAll(".link")
+
+    links.forEach(link => {
+      link.addEventListener('click',()=>{
+        menu?.classList.toggle("hidden")
+      })
+    });
+    if (menuButton != null) {
+      menuButton.addEventListener("click", () => {
+        if (menu != null) {
+          menu.classList.toggle("hidden");
+        }
+      });
+    }
+  });
+</script>
+
+<style>
+  #header-nav {
+    animation: blur linear both;
+    animation-timeline: scroll();
+    animation-range: 0 500px;
+  }
+  @keyframes blur {
+    to {
+      box-shadow:
+        0px 5px 50px -5px hsla(0, 0%, 100%, 0.1),
+        0px 0px 0px 1px hsla(0, 0%, 100%, 0.1);
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+    }
+  }
+</style>

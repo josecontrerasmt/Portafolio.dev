@@ -1,0 +1,81 @@
+  ---
+  const items = [
+    {
+      title: "Dashboard Gamer",
+      image1: "/ProyectosIMGs/design1.png",
+      image2: "/ProyectosIMGs/design2.png",
+      image3: "/ProyectosIMGs/design3.png",
+    },
+    {
+      title: "Landing Page",
+      image1: "/ProyectosIMGs/design4.png",
+      image2: "/ProyectosIMGs/design5.png",
+      image3: "/ProyectosIMGs/design6.png",
+    },
+    {
+      title: "Tienda de Comida",
+      image1: "/ProyectosIMGs/design7.png",
+      image2: "/ProyectosIMGs/design8.png",
+      image3: "/ProyectosIMGs/design9.png",
+    },
+  ];
+  ---
+  <div class="relative md:col-span-5">
+    <!-- Contenedor del carrusel -->
+    <div class="flex w-full gap-10 overflow-x-hidden" id="contenedorCarrusel">
+      {items.map((item) => (
+        <div class="card flex-none w-full md:w-80 bg-[#1d1e1f] border border-green-500 px-4 py-8 md:p-4 shadow-md rounded-lg space-y-3">
+            <!-- Imagen 1 -->
+            <img
+              src={item.image1}
+              alt={`Imagen 1 de ${item.title}`}
+              class="w-full h-56 md:h-40 object-cover"
+            />
+            <!-- Imagen 2 -->
+            <div class="flex">
+              <img
+              src={item.image2}
+              alt={`Imagen 2 de ${item.title}`}
+              class="w-full h-56 md:h-40 object-contain mx-auto"
+            />
+            <img
+              src={item.image3}
+              alt={`Imagen 3 de ${item.title}`}
+              class="w-full h-56 md:h-40 object-contain mx-auto"
+            />
+            </div>
+            
+            <!-- Título -->
+            <div>
+              <h3 class="text-lg font-semibold text-center text-green-400">{item.title}</h3>
+            </div>
+        </div>
+      ))}
+    </div>
+    <!-- Botones de navegación (opcionales) -->
+    <div class="absolute inset-0 flex justify-between items-center text-lg">
+      <button id="izquierda" class="w-10 h-10 bg-green-600 hover:bg-green-500 transition-colors text-white rounded-full -ml-5">
+        <i class='bx bxs-left-arrow'></i>
+      </button>
+      <button id="derecha" class="w-10 h-10 bg-green-600 hover:bg-green-500 transition-colors text-white rounded-full -mr-5">
+        <i class='bx bxs-right-arrow' ></i> 
+      </button>
+    </div>
+  </div>
+  <script>
+    const carouselContainer = document.getElementById("contenedorCarrusel");
+    const card = document.querySelector(".card")
+    document.getElementById("izquierda")?.addEventListener("click",()=>{
+      scrollLeft()
+    })
+    document.getElementById("derecha")?.addEventListener("click",()=>{
+      scrollRight()
+    })
+    const scrollLeft = () => {
+        carouselContainer?.scrollBy({ left: -card.offsetWidth-40, behavior: 'smooth' });
+    };
+  
+    const scrollRight = () => {
+      carouselContainer?.scrollBy({ left: card.offsetWidth+40, behavior: 'smooth' });    
+    };
+  </script>   

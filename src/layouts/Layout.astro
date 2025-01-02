@@ -1,0 +1,41 @@
+---
+import NavBar from "../components/NavBar.astro";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/Logo.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>
+      Portafolio de Jose Contreras | Desarrollador y Programador Web
+    </title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta
+      name="description"
+      content="Portafolio web desarrollado por Jose Contreras Martinez, desarrollador y programador web, especializado en crear aplicaciones únicas."
+    />
+  </head>
+  <body class="bg-[#151515] text-white mb-16">
+    <NavBar />
+    <div class="max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto px-5 md:px-0">
+      <slot />
+    </div>
+  </body>
+</html>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-image: linear-gradient(#ffffff06 1px, transparent 1px),
+      linear-gradient(to right, #ffffff06 1px, #151515 1px);
+    background-size: 15px 15px;
+  }
+</style>
