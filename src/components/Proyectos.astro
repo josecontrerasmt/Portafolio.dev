@@ -1,5 +1,6 @@
 ---
 import Carrusel from "./Carrusel.astro";
+import Trabajo from "./experience/Trabajo";
 
 const proyectos = [
   {
@@ -86,17 +87,194 @@ const proyectos = [
     link: "https://josecontrerasmt.github.io/Challenge-ONE-Encriptador-de-Texto/",
   },
 ];
+
+const tecnologias = {
+  react: {
+    id: "react",
+    nombre: "React",
+    icon: "/Logos/react.svg",
+  },
+  nextJs: {
+    id: "nextJs",
+    nombre: "Next.js",
+    icon: "/Logos/nextjs.svg",
+    black: true,
+  },
+  typeScript: {
+    id: "typeScript",
+    nombre: "TypeScript",
+    icon: "/Logos/typescript.svg",
+  },
+  angular: {
+    id: "angular",
+    nombre: "Angular",
+    icon: "/Logos/angular.svg",
+  },
+  vueJs: {
+    id: "vueJs",
+    nombre: "Vue.js",
+    icon: "/Logos/vue.svg",
+  },
+  tailwind: {
+    id: "tailwind",
+    nombre: "Tailwind",
+    icon: "/Logos/tailwind.svg",
+  },
+  restApis: {
+    id: "restApis",
+    nombre: "REST APIs",
+    icon: "/Logos/restApi.svg",
+    black: true,
+  },
+  git: {
+    id: "git",
+    nombre: "Git",
+    icon: "/Logos/git.svg",
+  },
+  html: {
+    id: "html",
+    nombre: "HTML",
+    icon: "/Logos/html.svg",
+  },
+  css: {
+    id: "css",
+    nombre: "CSS",
+    icon: "/Logos/css.svg",
+  },
+  javascript: {
+    id: "javascript",
+    nombre: "Javascript",
+    icon: "/Logos/javascript.svg",
+  },
+  wordpress: {
+    id: "wordpress",
+    nombre: "Wordpress",
+    icon: "/Logos/wordpress.svg",
+  },
+  astro: {
+    id: "astro",
+    nombre: "Astro",
+    icon: "/Logos/astro.svg",
+  },
+  seo: {
+    id: "seo",
+    nombre: "SEO",
+    icon: "/Logos/seo.svg",
+  },
+};
+
+const experiencia = {
+  egas: {
+    fechaInicio: "2025",
+    fechaFin: "Actualidad",
+    titulo: "Frontend Developer",
+    empresa: "EGAS",
+    empresaLink: "https://www.egas.com.mx/",
+    tituloFuncion:
+      "Desarrollo de aplicaciones web empresariales para la industria de hidrocarburos y petrolíferos.",
+    tecnologias: [
+      tecnologias.react,
+      tecnologias.nextJs,
+      tecnologias.typeScript,
+      tecnologias.angular,
+      tecnologias.vueJs,
+      tecnologias.tailwind,
+      tecnologias.restApis,
+      tecnologias.git,
+    ],
+    funciones: [
+      "Desarrollo y mantenimiento de aplicaciones web.",
+      "Implementación de nuevas funcionalidades y mejora continua de la experiencia de usuario.",
+      "Integración con APIs REST para la comunicación con los servicios backend.",
+      "Implementación de autenticación, autorización basada en roles y control de acceso de usuarios.",
+      "Desarrollo de validaciones y manejo de errores para mejorar la estabilidad y usabilidad de las aplicaciones.",
+      "Corrección de incidencias, optimización del rendimiento y mantenimiento evolutivo de múltiples proyectos.",
+      "Incorporación a proyectos existentes, comprendiendo rápidamente su arquitectura y contribuyendo a su desarrollo.",
+      "Adaptación a nuevas tecnologías, participando en el mantenimiento de aplicaciones desarrolladas con Angular y Vue.js además de proyectos en React.",
+    ],
+    logros: [
+      "Participé en el desarrollo y finalización de una plataforma analítica utilizada para el cumplimiento normativo en la industria de hidrocarburos.",
+      "He dado mantenimiento y desarrollado nuevas funcionalidades en múltiples aplicaciones de forma simultánea.",
+      "Me adapté rápidamente a proyectos desarrollados con distintas tecnologías.",
+      "Contribuí a mejorar la experiencia de usuario mediante la implementación de validaciones, manejo de errores y optimización de interfaces.",
+    ],
+  },
+  realidario: {
+    fechaInicio: "2024",
+    fechaFin: "2025",
+    titulo: "Desarrollador web",
+    empresa: "Realidario",
+    empresaLink: "https://realidario.com.mx/",
+    tituloFuncion:
+      "Desarrollo de sitios web corporativos y comerciales para diversos clientes.",
+    tecnologias: [
+      tecnologias.html,
+      tecnologias.css,
+      tecnologias.javascript,
+      tecnologias.astro,
+      tecnologias.tailwind,
+      tecnologias.wordpress,
+      tecnologias.seo,
+    ],
+    funciones: [
+      "Desarrollo de sitios web corporativos y comerciales para diversos clientes.",
+      "Creación de interfaces responsivas.",
+      "Desarrollo y mantenimiento de sitios en WordPress, incluyendo tiendas en línea con integración de productos, pasarelas de pago y métodos de envío.",
+      "Optimización SEO para mejorar el rendimiento y la visibilidad en buscadores.",
+      "Colaboración con equipos de diseño y marketing para implementar soluciones alineadas con los objetivos del cliente.",
+    ],
+    logros: [
+      "Participé en el desarrollo de múltiples sitios web.",
+      "Implementé tiendas en línea con integración de productos, métodos de pago y opciones de envío.",
+      "Mejoré el posicionamiento de diversos sitios mediante la implementación de estrategias SEO.",
+      "Colaboré con equipos multidisciplinarios para entregar soluciones alineadas a las necesidades de cada cliente.",
+    ],
+  },
+  freelance: {
+    fechaInicio: "2022",
+    fechaFin: "2024",
+    titulo: "Desarrollador web freelance",
+    empresa: "",
+    empresaLink: "",
+    tituloFuncion: "Desarrollo de sitios web para clientes independientes.",
+    tecnologias: [
+      tecnologias.html,
+      tecnologias.css,
+      tecnologias.javascript,
+      tecnologias.astro,
+      tecnologias.tailwind,
+      tecnologias.git,
+    ],
+    funciones: [
+      "Desarrollo de sitios web personalizados para clientes independientes.",
+      "Creación de interfaces responsivas.",
+      "Implementación de diseños adaptados a los requerimientos de cada proyecto.",
+      "Mantenimiento y actualización de sitios web existentes.",
+      "Gestión completa de proyectos, desde el levantamiento de requerimientos hasta la entrega final.",
+      "Comunicación directa con clientes para definir objetivos y dar seguimiento al desarrollo.",
+    ],
+    logros: [
+      "Gestioné proyectos de manera autónoma.",
+      "Desarrollé soluciones personalizadas adaptadas a las necesidades de cada cliente.",
+      "Fortalecí habilidades de comunicación y gestión al trabajar directamente con clientes.",
+      "Adquirí experiencia resolviendo problemas técnicos de forma independiente.",
+    ],
+  },
+};
 ---
 
 <section id="proyectos" class="mt-16 pt-20">
   <div class="textoContenedor">
     <!--Experiencia profecional!-->
-    <h2 class="tituloSecundario">💼 Experiencia Profesional</h2>
-    <section
-      class="grid lg:grid-cols-2 mt-10 gap-3 md:gap-10 items-center font-semibold"
-    >
-      <ol class="relative border-s border-green-500">
-        <li class="mb-10 ms-4">
+    <h2 class="tituloSecundario">
+      <i class="bx bxs-briefcase-alt-2"></i> Experiencia Profesional
+    </h2>
+    <section class="mt-10 font-semibold w-full mx-auto">
+      <ol class="relative flex flex-col gap-7 border-s border-green-500">
+        <Trabajo data={experiencia.egas} client:load />
+        <Trabajo data={experiencia.realidario} client:load />
+        <Trabajo data={experiencia.freelance} client:load />
+        <!-- <li class="mb-10 ms-4">
           <div
             class="absolute w-3 h-3 bg-green-500 rounded-full mt-1.5 -start-1.5"
           >
@@ -154,9 +332,9 @@ const proyectos = [
               >capacidad para gestionar proyectos de manera autónoma y efectiva</span
             >.
           </p>
-        </li>
+        </li> -->
       </ol>
-      <div class="grid grid-cols-2 gap-2 md:gap-5">
+      <!-- <div class="grid grid-cols-2 gap-2 md:gap-5">
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -198,13 +376,13 @@ const proyectos = [
             alt="Experiencia SaiDM69"
           />
         </a>
-      </div>
+      </div> -->
     </section>
   </div>
 
   <div class="mt-20">
     <!--Proyectos-->
-    <h2 class="tituloSecundario">💻 Proyectos</h2>
+    <h2 class="tituloSecundario"><i class="bx bx-laptop"></i> Proyectos</h2>
     <section class="grid md:grid-cols-2 lg:grid-cols-3 mt-10 gap-8">
       {
         proyectos.map((item) => (
@@ -243,7 +421,7 @@ const proyectos = [
 
   <div class="mt-20 textoContenedor">
     <!--Deseños web-->
-    <h2 class="tituloSecundario">🖋️ Diseños web</h2>
+    <h2 class="tituloSecundario"><i class='bx bx-paint'></i> Diseños web</h2>
     <section
       class="grid md:grid-cols-10 mt-8 gap-5 md:gap-10 items-center font-semibold"
     >
