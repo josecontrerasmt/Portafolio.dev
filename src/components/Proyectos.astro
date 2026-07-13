@@ -1,92 +1,7 @@
 ---
 import Carrusel from "./Carrusel.astro";
 import Trabajo from "./experience/Trabajo";
-
-const proyectos = [
-  {
-    id: 1,
-    imagen: "/ProyectosIMGs/rick and morty API.png",
-    herraminetas: [
-      { id: 1, logo: "bxl-html5", color: "text-[#e6532e]" },
-      { id: 2, logo: "bxl-css3", color: "text-[#1ba3de]" },
-      { id: 3, logo: "bxl-javascript", color: "text-[#ffde26]" },
-    ],
-
-    tituloProyecto: "Rick-and-Morty-Api",
-    descripcion:
-      "Personajes de Rick y Morty utilizando API con fetch y async/await.",
-    link: "https://josecontrerasmt.github.io/Rick-and-Morty-Api/",
-  },
-  {
-    id: 2,
-    imagen: "/ProyectosIMGs/Peliculas-Series-Populares.png",
-    herraminetas: [
-      { id: 1, logo: "bxl-react", color: "text-[#1ba3de]" },
-      { id: 2, logo: "bxl-html5", color: "text-[#e6532e]" },
-      { id: 3, logo: "bxl-css3", color: "text-[#1ba3de]" },
-      { id: 4, logo: "bxl-javascript", color: "text-[#ffde26]" },
-      { id: 5, logo: "bxl-tailwind-css", color: "text-[#35b8f0]" },
-    ],
-    tituloProyecto: "Películas y Series Populares",
-    descripcion:
-      'Aplicación personal para guardar películas y series populares utilizando los datos proporcionados por "The Movie db", interactiva e informativa.',
-    link: "https://josecontrerasmt.github.io/Peliculas-y-Series-Populares/",
-  },
-  {
-    id: 3,
-    imagen: "/ProyectosIMGs/Galeria.png",
-    herraminetas: [
-      { id: 1, logo: "bxl-html5", color: "text-[#e6532e]" },
-      { id: 2, logo: "bxl-css3", color: "text-[#1ba3de]" },
-      { id: 3, logo: "bxl-javascript", color: "text-[#ffde26]" },
-    ],
-    tituloProyecto: "Galería",
-    descripcion:
-      "Pequeña galería utilizando vanilla JavaScript para la interacción con las imágenes.",
-    link: "https://josecontrerasmt.github.io/Galeria/",
-  },
-  {
-    id: 4,
-    imagen: "/ProyectosIMGs/Tienda-tennis.png",
-    herraminetas: [
-      { id: 1, logo: "bxl-html5", color: "text-[#e6532e]" },
-      { id: 2, logo: "bxl-css3", color: "text-[#1ba3de]" },
-      { id: 3, logo: "bxl-javascript", color: "text-[#ffde26]" },
-      { id: 4, logo: "bxl-bootstrap", color: "text-[#6e2cf2]" },
-    ],
-    tituloProyecto: "Tienda Tenis",
-    descripcion:
-      "Se proporciona como un ejemplo de demostración únicamente para PC, donde cuenta con un carrito de compras, reseñas, características y envió.",
-    link: "https://josecontrerasmt.github.io/Tienda-de-Tenis/",
-  },
-  {
-    id: 5,
-    imagen: "/ProyectosIMGs/Game-Rock-Paper-Scissors.png",
-    herraminetas: [
-      { id: 1, logo: "bxl-html5", color: "text-[#e6532e]" },
-      { id: 2, logo: "bxl-css3", color: "text-[#1ba3de]" },
-      { id: 3, logo: "bxl-javascript", color: "text-[#ffde26]" },
-    ],
-    tituloProyecto: "Juego Rock-Paper-Scissors",
-    descripcion:
-      "Pequeño juego donde se tomó de inspiración un desafió de frontend mentor. Puedes elegir 2 maneras de jugar.",
-    link: "https://josecontrerasmt.github.io/Game-Rock-Paper-Scissors/",
-  },
-  {
-    id: 6,
-    imagen: "/ProyectosIMGs/Challenge-ONE-Encriptador-de-Texto.png",
-    herraminetas: [
-      { id: 1, logo: "bxl-html5", color: "text-[#e6532e]" },
-      { id: 2, logo: "bxl-css3", color: "text-[#1ba3de]" },
-      { id: 3, logo: "bxl-javascript", color: "text-[#ffde26]" },
-      { id: 4, logo: "bxl-tailwind-css", color: "text-[#35b8f0]" },
-    ],
-    tituloProyecto: "Challenge ONE - Encriptador de Texto",
-    descripcion:
-      "Desafió para un curso de Alura Latam donde se realizó un encriptador de texto.",
-    link: "https://josecontrerasmt.github.io/Challenge-ONE-Encriptador-de-Texto/",
-  },
-];
+import Tools from "./tools/Tools";
 
 const tecnologias = {
   react: {
@@ -162,6 +77,74 @@ const tecnologias = {
     icon: "/Logos/seo.svg",
   },
 };
+
+const proyectos = [
+  {
+    id: 1,
+    imagen: "/ProyectosIMGs/rick and morty API.png",
+    herraminetas: [tecnologias.html, tecnologias.css, tecnologias.javascript],
+
+    tituloProyecto: "Rick and Morty Characters",
+    descripcion:
+      "Personajes de Rick y Morty utilizando API con fetch y async/await.",
+    link: "https://josecontrerasmt.github.io/Rick-and-Morty-Api/",
+  },
+  {
+    id: 2,
+    imagen: "/ProyectosIMGs/Peliculas-Series-Populares.png",
+    herraminetas: [tecnologias.react, tecnologias.tailwind],
+    tituloProyecto: "Películas y Series Populares",
+    descripcion:
+      'Aplicación personal para guardar películas y series populares utilizando los datos proporcionados por "The Movie db", interactiva e informativa.',
+    link: "https://josecontrerasmt.github.io/Peliculas-y-Series-Populares/",
+  },
+  {
+    id: 3,
+    imagen: "/ProyectosIMGs/Galeria.png",
+    herraminetas: [tecnologias.html, tecnologias.css, tecnologias.javascript],
+    tituloProyecto: "Galería",
+    descripcion:
+      "Pequeña galería utilizando vanilla JavaScript para la interacción con las imágenes.",
+    link: "https://josecontrerasmt.github.io/Galeria/",
+  },
+  {
+    id: 4,
+    imagen: "/ProyectosIMGs/Tienda-tennis.png",
+    herraminetas: [
+      tecnologias.html,
+      tecnologias.css,
+      tecnologias.javascript,
+      tecnologias.tailwind,
+    ],
+    tituloProyecto: "Tienda Tenis",
+    descripcion:
+      "Se proporciona como un ejemplo de demostración únicamente para PC, donde cuenta con un carrito de compras, reseñas, características y envió.",
+    link: "https://josecontrerasmt.github.io/Tienda-de-Tenis/",
+  },
+  {
+    id: 5,
+    imagen: "/ProyectosIMGs/Game-Rock-Paper-Scissors.png",
+    herraminetas: [tecnologias.html, tecnologias.css, tecnologias.javascript],
+    tituloProyecto: "Juego Rock-Paper-Scissors",
+    descripcion:
+      "Pequeño juego donde se tomó de inspiración un desafió de frontend mentor. Puedes elegir 2 maneras de jugar.",
+    link: "https://josecontrerasmt.github.io/Game-Rock-Paper-Scissors/",
+  },
+  {
+    id: 6,
+    imagen: "/ProyectosIMGs/Challenge-ONE-Encriptador-de-Texto.png",
+    herraminetas: [
+      tecnologias.html,
+      tecnologias.css,
+      tecnologias.javascript,
+      tecnologias.tailwind,
+    ],
+    tituloProyecto: "Challenge ONE - Encriptador de Texto",
+    descripcion:
+      "Desafió para un curso de Alura Latam donde se realizó un encriptador de texto.",
+    link: "https://josecontrerasmt.github.io/Challenge-ONE-Encriptador-de-Texto/",
+  },
+];
 
 const experiencia = {
   egas: {
@@ -274,146 +257,58 @@ const experiencia = {
         <Trabajo data={experiencia.egas} client:load />
         <Trabajo data={experiencia.realidario} client:load />
         <Trabajo data={experiencia.freelance} client:load />
-        <!-- <li class="mb-10 ms-4">
-          <div
-            class="absolute w-3 h-3 bg-green-500 rounded-full mt-1.5 -start-1.5"
-          >
-          </div>
-          <time
-            class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-            >2024</time
-          >
-          <h3 class="text-xl mb-2 font-semibold text-gray-900 dark:text-white">
-            💼 Desarrollador de sitios web - <a
-              class="underline text-green-400"
-              href="https://realidario.com.mx/"
-              target="_blank"
-              rel="noopener noreferrer">Empresa Realidario</a
-            >
-          </h3>
-          <p class="mb-4 text-base font-semibold text-gray-400">
-            Trabaje durante un tiempo en la empresa Realidario, desempeñándome
-            como <span>desarrollador de sitios web</span>, creando soluciones a
-            las necesidades de diversos clientes. Utilicé <span
-              >tecnologías como HTML5, CSS3, JavaScript y Astro</span
-            >, y en algunas ocasiones trabajé con WordPress, especialmente en el
-            desarrollo de tiendas en línea, donde gestioné la carga de
-            productos, métodos de pago y sistemas de envío.
-            <br /><br />
-            También incursioné en el <span>marketing digital</span>,
-            implementando estrategias de SEO para mejorar el posicionamiento
-            web, realizando investigaciones de mercado y creando contenido para
-            redes sociales. Esta experiencia
-            <span>me permitió combinar habilidades técnicas y de marketing</span
-            > para entregar proyectos completos y efectivos.
-          </p>
-        </li>
-        <li class="mb-10 ms-4">
-          <div
-            class="absolute w-3 h-3 bg-green-500 rounded-full mt-1.5 -start-1.5"
-          >
-          </div>
-          <time
-            class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-            >2022-2024</time
-          >
-          <h3 class="text-xl mb-2 font-semibold text-gray-900 dark:text-white">
-            💼 Desarrollador web freelance
-          </h3>
-          <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-            Cuento con experiencia en desarrollo web, adquirida durante mi
-            tiempo como desarrollador freelance. En este rol, <span
-              >trabajé en diversos proyectos adaptados a las necesidades de cada
-              cliente</span
-            >, utilizando tecnologías como HTML5, CSS3, JavaScript y enfocándome
-            en crear sitios funcionales, atractivos y personalizados. Esta
-            experiencia me permitió desarrollar habilidades técnicas, así como
-            una <span
-              >capacidad para gestionar proyectos de manera autónoma y efectiva</span
-            >.
-          </p>
-        </li> -->
       </ol>
-      <!-- <div class="grid grid-cols-2 gap-2 md:gap-5">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://realidario.com.mx/"
-        >
-          <img
-            class="w-full h-40 md:h-52 rounded-md object-cover"
-            src="/ExperienciaIMGs/Img1.png"
-            alt="Experiencia Realidario"
-          />
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://realidario.com.mx/contacto/"
-        >
-          <img
-            class="w-full h-40 md:h-52 rounded-md object-cover"
-            src="/ExperienciaIMGs/Img4.png"
-            alt="Experiencia Realidario Contacto"
-          />
-        </a>
-
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://koonautomatic.com/"
-        >
-          <img
-            class="w-full h-40 md:h-52 rounded-md object-cover"
-            src="/ExperienciaIMGs/Img2.png"
-            alt="Experiencia Koon Automatic"
-          />
-        </a>
-        <a target="_blank" rel="noopener noreferrer" href="https://saidm69.mx/">
-          <img
-            class="w-full h-40 md:h-52 rounded-md object-cover"
-            src="/ExperienciaIMGs/Img3.png"
-            alt="Experiencia SaiDM69"
-          />
-        </a>
-      </div> -->
     </section>
   </div>
 
   <div class="mt-20">
     <!--Proyectos-->
-    <h2 class="tituloSecundario"><i class="bx bx-laptop"></i> Proyectos</h2>
+    <h2 class="tituloSecundario">
+      <i class="bx bx-laptop"></i> Proyectos personales
+    </h2>
     <section class="grid md:grid-cols-2 lg:grid-cols-3 mt-10 gap-8">
       {
         proyectos.map((item) => (
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={item.link}
-            class="w-full bg-[#121313] border border-gray-600 hover:border-green-600 transition-colors px-6 py-8 rounded-md space-y-6 group"
-          >
-            <img
-              class="object-cover rounded-md"
-              src={item.imagen}
-              alt={item.tituloProyecto}
-            />
-            <div class="space-y-3 mt-2">
-              <div class="text-center space-x-2">
-                {item.herraminetas.map((herramienta) => (
-                  <i
-                    class={`bx ${herramienta.logo} text-3xl ${herramienta.color}`}
-                  />
-                ))}
+          <div class="w-full bg-[#121313] border border-black shadow-sm shadow-black p-4 rounded-md flex flex-col justify-between gap-5">
+            <div class="space-y-6">
+              <img
+                class="object-cover rounded-md"
+                src={item.imagen}
+                alt={item.tituloProyecto}
+              />
+              <div class="space-y-3 mt-2">
+                <div class="text-center space-x-2 flex gap-2 flex-wrap justify-center font-semibold">
+                  {item.herraminetas.map((item) => (
+                    <Tools item={item} client:load />
+                  ))}
+                </div>
+                <h3 class="text-xl font-bold text-center text-green-400">
+                  {item.tituloProyecto}
+                </h3>
+                <p class="font-normal text-[15px]">{item.descripcion}</p>
               </div>
-              <h3 class="text-xl font-bold text-center group-hover:text-green-400 transition-colors ">
-                {item.tituloProyecto}
-              </h3>
-              <p class="font-semibold">{item.descripcion}</p>
-              <span class="md:hidden font-semibold text-sm text-center block text-green-400">
-                Ver Proyecto👆
-              </span>
             </div>
-          </a>
+            <div class="flex justify-between">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={item.link}
+                class="hover:bg-[#212121] transition-all cursor-pointer py-1.5 px-3 rounded-md font-semibold text-sm text-center flex items-center gap-1 text-gray-400 hover:text-gray-100"
+              >
+                <i class="bx bx-link-alt text-green-400" />
+                Demo
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={item.link}
+                class="hover:bg-[#212121] transition-all cursor-pointer py-1.5 px-3 rounded-md font-semibold text-sm text-center flex items-center gap-1 text-gray-400 hover:text-gray-100"
+              >
+                <i class="bx bx-code-alt text-green-400" />
+                Código
+              </a>
+            </div>
+          </div>
         ))
       }
     </section>
@@ -421,33 +316,13 @@ const experiencia = {
 
   <div class="mt-20 textoContenedor">
     <!--Deseños web-->
-    <h2 class="tituloSecundario"><i class='bx bx-paint'></i> Diseños web</h2>
-    <section
-      class="grid md:grid-cols-10 mt-8 gap-5 md:gap-10 items-center font-semibold"
-    >
-      <div class="w-full md:col-span-5">
-        <p>
-          He tenido la oportunidad de crear una <span
-            >variedad de diseños web tanto a nivel personal como profesional</span
-          >. Estos proyectos me han permitido experimentar con diferentes
-          estilos y enfoques, desde páginas informativas y portafolios
-          personales hasta sitios más complejos orientados a negocios.
-        </p>
-        <p>
-          En cada diseño he ido <span
-            >asegurando interfaces modernas, funcionales y adaptadas</span
-          > a las necesidades específicas de cada proyecto.
-        </p>
-        <p>
-          Estos proyectos no solo han fortalecido mis habilidades técnicas, sino
-          que también <span
-            >han refinado mi capacidad para entender las necesidades del cliente
-            y traducirlas en soluciones digitales</span
-          > efectivas y visualmente atractivas.
-        </p>
-      </div>
-      <Carrusel />
-    </section>
+    <h2 class="tituloSecundario"><i class="bx bx-paint"></i> UI & UX</h2>
+    <p class="mt-2 font-semibold text-center">
+      Algunas interfaces desarrolladas para proyectos personales y
+      profesionales, enfocadas en crear experiencias limpias, intuitivas y
+      responsivas.
+    </p>
+    <Carrusel />
   </div>
 </section>
 
