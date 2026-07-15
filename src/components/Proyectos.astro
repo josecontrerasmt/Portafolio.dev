@@ -2,81 +2,7 @@
 import Carrusel from "./Carrusel.astro";
 import Trabajo from "./experience/Trabajo";
 import Tools from "./tools/Tools";
-
-const tecnologias = {
-  react: {
-    id: "react",
-    nombre: "React",
-    icon: "/Logos/react.svg",
-  },
-  nextJs: {
-    id: "nextJs",
-    nombre: "Next.js",
-    icon: "/Logos/nextjs.svg",
-    black: true,
-  },
-  typeScript: {
-    id: "typeScript",
-    nombre: "TypeScript",
-    icon: "/Logos/typescript.svg",
-  },
-  angular: {
-    id: "angular",
-    nombre: "Angular",
-    icon: "/Logos/angular.svg",
-  },
-  vueJs: {
-    id: "vueJs",
-    nombre: "Vue.js",
-    icon: "/Logos/vue.svg",
-  },
-  tailwind: {
-    id: "tailwind",
-    nombre: "Tailwind",
-    icon: "/Logos/tailwind.svg",
-  },
-  restApis: {
-    id: "restApis",
-    nombre: "REST APIs",
-    icon: "/Logos/restApi.svg",
-    black: true,
-  },
-  git: {
-    id: "git",
-    nombre: "Git",
-    icon: "/Logos/git.svg",
-  },
-  html: {
-    id: "html",
-    nombre: "HTML",
-    icon: "/Logos/html.svg",
-  },
-  css: {
-    id: "css",
-    nombre: "CSS",
-    icon: "/Logos/css.svg",
-  },
-  javascript: {
-    id: "javascript",
-    nombre: "Javascript",
-    icon: "/Logos/javascript.svg",
-  },
-  wordpress: {
-    id: "wordpress",
-    nombre: "Wordpress",
-    icon: "/Logos/wordpress.svg",
-  },
-  astro: {
-    id: "astro",
-    nombre: "Astro",
-    icon: "/Logos/astro.svg",
-  },
-  seo: {
-    id: "seo",
-    nombre: "SEO",
-    icon: "/Logos/seo.svg",
-  },
-};
+import tecnologias from "./utils/tecnologias";
 
 const proyectos = [
   {
@@ -247,7 +173,7 @@ const experiencia = {
 ---
 
 <section id="proyectos" class="mt-16 pt-20">
-  <div class="textoContenedor">
+  <div>
     <!--Experiencia profecional!-->
     <h2 class="tituloSecundario">
       <i class="bx bxs-briefcase-alt-2"></i> Experiencia Profesional
@@ -266,26 +192,26 @@ const experiencia = {
     <h2 class="tituloSecundario">
       <i class="bx bx-laptop"></i> Proyectos personales
     </h2>
-    <section class="grid md:grid-cols-2 lg:grid-cols-3 mt-10 gap-8">
+    <section class="grid md:grid-cols-2 lg:grid-cols-3 mt-10 gap-5">
       {
         proyectos.map((item) => (
           <div class="w-full bg-[#121313] border border-black shadow-sm shadow-black p-4 rounded-md flex flex-col justify-between gap-5">
             <div class="space-y-6">
               <img
-                class="object-cover rounded-md"
+                class="object-cover rounded-md h-44 w-full object-top"
                 src={item.imagen}
                 alt={item.tituloProyecto}
               />
               <div class="space-y-3 mt-2">
                 <div class="text-center space-x-2 flex gap-2 flex-wrap justify-center font-semibold">
                   {item.herraminetas.map((item) => (
-                    <Tools item={item} client:load />
+                    <Tools textSize="13px" item={item} client:load />
                   ))}
                 </div>
                 <h3 class="text-xl font-bold text-center text-green-400">
                   {item.tituloProyecto}
                 </h3>
-                <p class="font-normal text-[15px]">{item.descripcion}</p>
+                <p class="font-normal text-[14px]">{item.descripcion}</p>
               </div>
             </div>
             <div class="flex justify-between">
@@ -314,7 +240,7 @@ const experiencia = {
     </section>
   </div>
 
-  <div class="mt-20 textoContenedor">
+  <div class="mt-20">
     <!--Deseños web-->
     <h2 class="tituloSecundario"><i class="bx bx-paint"></i> UI & UX</h2>
     <p class="mt-2 font-semibold text-center">
@@ -335,9 +261,5 @@ const experiencia = {
     font-size: 1.8em;
     text-align: center;
     color: #49de80;
-  }
-  .textoContenedor:hover span {
-    color: #6df49e;
-    transition: color 0.4s ease;
   }
 </style>

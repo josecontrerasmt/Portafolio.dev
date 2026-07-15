@@ -1,6 +1,8 @@
-const Tools = ({item}) => {
+const Tools = ({ item, textSize = "14px" }) => {
   return (
-    <div className="bg-[#1e1f1f] text-[14px] py-1.5 px-3.5 rounded-md flex items-center gap-2">
+    <div
+      className={`bg-[#1e1f1f] text-[${textSize}] py-1.5 px-3.5 rounded-md flex items-center gap-2`}
+    >
       <img
         src={item.icon}
         alt={`Herramienta - ${item.text}}`}
