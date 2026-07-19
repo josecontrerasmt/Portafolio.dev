@@ -65,6 +65,7 @@ const tecnologias = {
     id: "astro",
     nombre: "Astro",
     icon: "/Logos/astro.svg",
+    light: true,
   },
   seo: {
     id: "seo",
@@ -89,4 +90,4 @@ const tecnologias = {
   },
 };
 
-export default  tecnologias
+export default tecnologias;

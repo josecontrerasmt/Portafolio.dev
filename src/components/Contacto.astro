@@ -1,45 +1,51 @@
 ---
-
+const textoACopiar = "josecontrersmt@gmail.com";
 ---
 
 <footer id="contactame" class="mt-20 pt-16">
   <h2 class="tituloSecundario">¿Trabajamos juntos?</h2>
-  <p class="mt-10 font-semibold w-full md:w-[80%] mx-auto text-center">
+  <p class="mt-10 font-semibold w-full md:w-[90%] mx-auto text-center">
     Estoy abierto a nuevas oportunidades como Frontend Developer, así como a
     colaborar en proyectos donde pueda aportar mi experiencia y seguir creciendo
     profesionalmente. Si crees que mi perfil puede encajar en tu equipo o
     simplemente quieres conversar sobre una idea, estaré encantado de leerte.
   </p>
   <div
-    class="mt-7 flex flex-col md:flex-row justify-center items-center gap-4 md:gap-20 text-lg font-semibold"
+    class="mt-8 flex justify-center items-center gap-3 text-lg font-semibold"
   >
-    <span>✉️ josecontrersmt@gmail.com</span>
+    <button id="boton-copiar" class="flex gap-3">
+      <i class="bx bx-mail-send block text-2xl"></i><span id="message"
+        >josecontrersmt@gmail.com</span
+      ></button
+    >
   </div>
-  <div class="flex gap-2 items-center justify-center mt-7 font-semibold">
+  <div
+    class="flex flex-col lg:flex-row gap-5 lg:gap-5 justify-center mt-6 items-center font-semibold"
+  >
     <a
       href="/Jose-Felix-Trinidad-Contreras-Martínez-CV.pdf"
       download="./Jose-Felix-Trinidad-Contreras-Martínez-CV.pdf"
-      class="bg-green-600 py-1.5 px-4 rounded-md hover:bg-green-500 transition-colors"
-      >Descarga mi CV</a
+      class="text-[#1d1e1f] hover:bg-[#1d1e1f] hover:text-white bg-[white] dark:bg-[#1d1e1f] dark:text-white dark:hover:brightness-125 py-1 px-4 flex items-center gap-2 text-sm rounded-md transition-all dark:hover:text-green-500"
+      ><i class="bx bxs-file-pdf text-4xl"></i>Descarga mi CV</a
     >
     <a
       target="_blank"
       rel="noopener noreferrer"
-      class="hover:text-green-400 bg-[#1d1e1f] rounded-md py-1.5 px-4 transition-colors flex items-center gap-2 text-sm"
+      class="text-[#1d1e1f] hover:bg-[#1d1e1f] hover:text-white bg-[white] dark:bg-[#1d1e1f] dark:text-white dark:hover:brightness-125 py-1 px-4 flex items-center gap-2 text-sm rounded-md transition-all dark:hover:text-green-500"
       href="https://github.com/josecontrerasmt"
-      ><i class="bx bxl-github text-xl"></i>GitHub</a
+      ><i class="bx bxl-github text-4xl"></i>GitHub</a
     >
     <a
       target="_blank"
       rel="noopener noreferrer"
-      class="hover:text-green-400 bg-[#1d1e1f] rounded-md py-1.5 px-4 transition-colors flex items-center gap-2 text-sm"
+      class="text-[#1d1e1f] hover:bg-[#1d1e1f] hover:text-white bg-[white] dark:bg-[#1d1e1f] dark:text-white dark:hover:brightness-125 py-1 px-4 flex items-center gap-2 text-sm rounded-md transition-all dark:hover:text-green-500"
       href="https://www.linkedin.com/in/jose-contreras-martinez-34a4bb2ab/"
-      ><i class="bx bxl-linkedin-square text-xl"></i>LinkedIn</a
+      ><i class="bx bxl-linkedin-square text-4xl"></i>LinkedIn</a
     >
   </div>
-  <span class="text-xl mt-10 font-bold text-center block"
-    >Gracias por visitar mi <span class="text-green-400">portafolio</span>.
-    Espero que podamos trabajar <span class="text-green-400">juntos</span
+  <span class="text-[23px] mt-12 font-bold text-center block"
+    >Gracias por visitar mi <span class="dark:text-green-400">portafolio</span>.
+    Espero que podamos trabajar <span class="dark:text-green-400">juntos</span
     >.</span
   >
 </footer>
@@ -48,6 +54,34 @@
     font-weight: bold;
     font-size: 2em;
     text-align: center;
-    color: #49de80;
+    color: var(--tituloSecundario);
+  }
+  .oculto {
+    color: var(--tituloSecundario);
+    pointer-events: none;
+    /* opacity: 0.4; */
   }
 </style>
+
+<script>
+  // Este script se ejecuta en el cliente
+  const botonCopiar = document.getElementById("boton-copiar");
+  const textoObjetivo = document.getElementById("message") || "";
+
+  if (botonCopiar && textoObjetivo) {
+    botonCopiar.addEventListener("click", async () => {
+      try {
+        const texto = textoObjetivo.innerText || "";
+        await navigator.clipboard.writeText(texto);
+        textoObjetivo.textContent = "¡Copiado!";
+        botonCopiar.classList.add("oculto");
+        setTimeout(() => {
+          textoObjetivo.textContent = texto;
+          botonCopiar.classList.remove("oculto");
+        }, 2000);
+      } catch (error) {
+        console.error("Error al copiar el texto: ", error);
+      }
+    });
+  }
+</script>

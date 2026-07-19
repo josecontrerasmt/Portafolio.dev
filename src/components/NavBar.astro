@@ -2,35 +2,51 @@
   <div
     class="flex h-full justify-between items-center overflow-hidden max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto px-4 md:px-0"
   >
-    <img class="w-8 md:w-10 object-cover" src="/Logo.png" alt="Mi Logo" />
+    <img
+      class="w-8 md:w-10 object-cover bg-black dark:bg-transparent rounded-full"
+      src="/Logo.png"
+      alt="Mi Logo"
+    />
 
     <div class="hidden md:flex space-x-8 font-semibold">
       <a
         href="#inicio"
-        class="text-white hover:text-green-400 transition-colors">Inicio</a
+        class="text-black dark:text-white dark:hover:text-green-400 transition-colors"
+        >Inicio</a
       >
       <a
         href="#proyectos"
-        class="text-white hover:text-green-400 transition-colors">Proyectos</a
+        class="text-black dark:text-white dark:hover:text-green-400 transition-colors"
+        >Proyectos</a
       >
       <a
         href="#habilidades"
-        class="text-white hover:text-green-400 transition-colors">Habilidades</a
+        class="text-black dark:text-white dark:hover:text-green-400 transition-colors"
+        >Habilidades</a
       >
       <a
         href="#sobre-mi"
-        class="text-white hover:text-green-400 transition-colors">Sobre mi</a
+        class="text-black dark:text-white dark:hover:text-green-400 transition-colors"
+        >Sobre mi</a
+      >
+      <a
+        href="#contactame"
+        class="text-black dark:text-white dark:hover:text-green-400 transition-colors"
+        >Contacto</a
       >
     </div>
-    <a
-      href="#contactame"
-      class="bg-green-600 py-2 px-5 rounded-md hover:bg-green-500 transition-colors font-semibold hidden md:block"
-      >Contactame</a
-    >
+    <button id="themeToggle" class="text-xl">
+      <span class="hidden dark:inline"
+        ><i class="bx bxs-sun text-white"></i></span
+      >
+      <span class="inline dark:hidden"
+        ><i class="bx bxs-moon text-black"></i></span
+      >
+    </button>
     <div class="md:hidden flex items-center">
       <button
         id="menu-button"
-        class="text-white hover:text-green-400 focus:outline-none"
+        class="text-black dark:text-white dark:hover:text-green-400 focus:outline-none"
       >
         <svg
           class="w-6 h-6"
@@ -49,28 +65,45 @@
     </div>
   </div>
 
-  <div id="menu" class="md:hidden hidden">
+  <div id="menu" class="hidden md:hidden">
     <div
-      class="text-center px-4 py-4 space-y-5 border-2 rounded-lg border-white bg-[#151515]"
+      class="text-center px-4 py-4 space-y-5 border-2 rounded-lg bg-white border-black dark:border-white dark:bg-[#151515]"
     >
-      <a href="#inicio" class="text-white hover:text-green-400 link">Inicio</a>
-      <a href="#proyectos" class="block text-white hover:text-green-400 link"
+      <a
+        href="#inicio"
+        class="text-black dark:text-white dark:hover:text-green-400 link"
+        >Inicio</a
+      >
+      <a
+        href="#proyectos"
+        class="block text-black dark:text-white dark:hover:text-green-400 link"
         >Proyectos</a
       >
-      <a href="#habilidades" class="block text-white hover:text-green-400 link"
+      <a
+        href="#habilidades"
+        class="block text-black dark:text-white dark:hover:text-green-400 link"
         >Habilidades</a
       >
-      <a href="#sobre-mi" class="block text-white hover:text-green-400 link"
+      <a
+        href="#sobre-mi"
+        class="block text-black dark:text-white dark:hover:text-green-400 link"
         >Sobre mi</a
       >
-      <a href="#contactame" class="block text-white hover:text-green-400 link"
-        >Contactame</a
+      <a
+        href="#contactame"
+        class="block text-black dark:text-white dark:hover:text-green-400 link"
+        >Contacto</a
       >
     </div>
   </div>
 </nav>
 
 <script>
+  const themeToggle = document.getElementById("themeToggle");
+  themeToggle?.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+  });
+
   document.addEventListener("DOMContentLoaded", () => {
     const menuButton = document.getElementById("menu-button");
     const menu = document.getElementById("menu");
@@ -97,12 +130,11 @@
     animation-timeline: scroll();
     animation-range: 0 500px;
   }
+
   @keyframes blur {
     to {
-      box-shadow:
-        0px 5px 50px -5px hsla(0, 0%, 100%, 0.1),
-        0px 0px 0px 1px hsla(0, 0%, 100%, 0.1);
-      background: rgba(0, 0, 0, 0.8);
+      box-shadow: var(--nav-shadow);
+      background: var(--nav-bg);
       backdrop-filter: blur(8px);
     }
   }

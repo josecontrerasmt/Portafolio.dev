@@ -1,5 +1,6 @@
 ---
 import NavBar from "../components/NavBar.astro";
+import "../styles/global.css";
 ---
 
 <!doctype html>
@@ -20,10 +21,38 @@ import NavBar from "../components/NavBar.astro";
       name="description"
       content="Portafolio web desarrollado por Jose Contreras Martinez, desarrollador y programador web, especializado en crear aplicaciones únicas."
     />
+    <script is:inline>
+      const getThemePreference = () => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme");
+        }
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+      };
+
+      const isDark = getThemePreference() === "dark";
+      document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+      if (typeof localStorage !== "undefined") {
+        const observer = new MutationObserver(() => {
+          const rootIsDark =
+            document.documentElement.classList.contains("dark");
+          localStorage.setItem("theme", rootIsDark ? "dark" : "light");
+        });
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ["class"],
+        });
+      }
+    </script>
   </head>
-  <body class="bg-[#151515] text-white mb-16">
+  <body class="bg-[#E5E3E6] dark:bg-[#151515] mb-16">
     <NavBar />
-    <div class="max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto px-5 md:px-0">
+    <div class="max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto px-5 md:px-0 text-[#151515] dark:text-white">
       <slot />
     </div>
   </body>
@@ -35,8 +64,15 @@ import NavBar from "../components/NavBar.astro";
   }
   body {
     background-image:
-      linear-gradient(#ffffff03 1px, transparent 1px),
-      linear-gradient(to right, #ffffff03 1px, #151515 1px);
+      linear-gradient(#00000008 1px, transparent 1px),
+      linear-gradient(to right, #00000008 1px, #E5E3E6 1px);
+
     background-size: 15px 15px;
+  }
+
+  html.dark body {
+    background-image:
+      linear-gradient(#ffffff08 1px, transparent 1px),
+      linear-gradient(to right, #ffffff08 1px, #151515 1px);
   }
 </style>

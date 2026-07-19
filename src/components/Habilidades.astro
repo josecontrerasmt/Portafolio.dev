@@ -29,32 +29,32 @@ const adicionales = [
       class="md:col-span-4 order-2 md:order-1 grid grid-cols-2 md:grid-cols-4 gap-5"
     >
       <h3
-        class="block col-span-full text-xl font-semibold text-center pb-1.5 pt-1 text-green-400"
+        class="block col-span-full text-[22px] font-bold text-center pb-1.5 pt-1 text-black dark:text-green-400"
       >
         Stack principal
       </h3>
       {
         principales.map((item: any) => (
-          <div class="w-full h-36 md:h-40 flex flex-col items-center justify-center p-8 bg-[#121313] border border-black shadow-sm shadow-black rounded-md gap-3 text-center">
+          <div class="w-full h-36 md:h-40 flex flex-col items-center justify-center p-8 bg-white dark:bg-[#121313] dark:border dark:border-black shadow-sm dark:shadow-black rounded-md gap-3 text-center">
             <img
-              class={`w-full h-16 object-contain ${item.black ? "bg-white rounded-md p-2 w-auto" : ""}`}
+              class={`w-full h-16 object-contain max-w-max ${item.black ? "bg-white rounded-md p-2 w-auto" : ""}`}
               src={item.icon}
               alt={item.nombre}
             />
-            <span class="block font-bold text-[16px]">{item.nombre}</span>
+            <span class="block font-bold text-[17px]">{item.nombre}</span>
           </div>
         ))
       }
       <h3
-        class="block col-span-full text-xl font-semibold text-center pb-1.5 pt-1 text-green-400"
+        class="block col-span-full text-[22px] font-bold text-center pb-1.5 pt-1 text-black dark:text-green-400"
       >
         También he trabajado con
       </h3>
       {
         secundarias.map((item: any) => (
-          <div class="w-full h-36 md:h-48 flex flex-col items-center justify-center p-9 md:p-10 bg-[#121313] border border-black shadow-sm shadow-black rounded-md gap-3 text-center">
+          <div class="w-full h-36 md:h-40 flex flex-col items-center justify-center p-8 bg-white dark:bg-[#121313] dark:border dark:border-black shadow-sm dark:shadow-black rounded-md gap-3 text-center">
             <img
-              class={`w-full h-16 object-contain ${item.black ? "bg-white rounded-md p-2 w-auto" : ""}`}
+              class={`w-full h-16 object-contain max-w-max ${item.black ? "bg-white rounded-md p-2 w-auto" : ""} ${item.light ? "bg-[#121313] p-2 dark:p-1 rounded-md" : ""}`}
               src={item.icon}
               alt={item.nombre}
             />
@@ -65,23 +65,23 @@ const adicionales = [
     </div>
     <div class="md:col-span-4 lg:col-span-2 order-1 md:order-2">
       <div
-        class="w-full h-full bg-[#1d1e1f] border border-black shadow-sm shadow-black rounded-md grid place-content-center pt-5 pb-8"
+        class="w-full h-full bg-white dark:bg-[#1d1e1f] dark:border dark:border-black shadow-sm dark:shadow-black rounded-md grid place-content-center pt-5 pb-8"
       >
         <div class="font-bold text-center mb-8">
-          <span class="block text-green-500 text-7xl">+2</span>
+          <span class="block text-black dark:text-green-500 text-7xl">+2</span>
           <span class="block text-4xl mt-5">Años<br />de<br />Experiencia</span>
         </div>
         <a
           href="/Jose-Felix-Trinidad-Contreras-Martínez-CV.pdf"
           download="./Jose-Felix-Trinidad-Contreras-Martínez-CV.pdf"
-          class="bg-green-600 py-3 px-6 text-lg font-semibold text-center rounded-md hover:bg-green-500 transition-colors"
-          >Descarga mi CV</a
+          class="bg-[#E5E3E6] hover:bg-[#1d1e1f] hover:text-white flex items-center gap-2 text-black dark:text-white dark:bg-green-600 py-3 px-6 text-lg font-semibold text-center rounded-md dark:hover:bg-green-500 transition-colors"
+          ><i class="bx bxs-file-pdf text-2xl"></i>Descarga mi CV</a
         >
       </div>
     </div>
   </div>
   <div
-    class="mt-10 bg-[#1d1e1f] w-full border border-black shadow-sm shadow-black rounded-md pt-6 pb-10"
+    class="mt-10 bg-white dark:bg-[#1d1e1f] w-full dark:border dark:border-black shadow-sm dark:shadow-black rounded-md pt-6 pb-10"
   >
     <h3 class="tituloSecundario">Adicionales</h3>
     <div class="flex flex-wrap justify-center mt-4 gap-12">
@@ -89,11 +89,11 @@ const adicionales = [
         adicionales.map((item: any) => (
           <div class="flex flex-col gap-2 justify-center items-center">
             <img
-              class={`h-10 object-cover ${item.black ? "bg-white rounded-md p-2 w-auto" : ""}`}
+              class={`h-10 object-cover ${item.black ? "bg-white rounded-md p-0 dark:p-2 w-auto" : ""}`}
               src={item.icon}
               alt={item.nombre}
             />
-            <span class="block font-semibold">{item.nombre}</span>
+            <span class="block font-semibold text-[17px]">{item.nombre}</span>
           </div>
         ))
       }
@@ -106,6 +106,6 @@ const adicionales = [
     font-weight: bold;
     font-size: 2em;
     text-align: center;
-    color: #49de80;
+    color: var(--tituloSecundario);
   }
 </style>
