@@ -48,13 +48,15 @@ export default function Trabajo({ data }) {
             Funciones principales
           </span>
           <ol className="space-y-2 font-normal text-sm mt-3">
-            {data.funciones.map((text) => (
+            {data.funciones.map((item) => (
               <li
-                key={text}
-                className="bg-[#ededed] dark:bg-[#1c1d1d] text-[15px] p-2 rounded-md flex gap-2 items-center"
+                key={item.text}
+                className="bg-[#ededed] dark:bg-[#1c1d1d] text-[14px] font-semibold p-2 rounded-md flex gap-2 items-center"
               >
-                <i className="bx bx-code-alt text-black dark:text-green-500 font-bold"></i>
-                {text}
+                <i
+                  className={`${item.icon} text-black dark:text-green-500 font-bold dark:font-normal text-[16px]`}
+                ></i>
+                {item.text}
               </li>
             ))}
           </ol>
@@ -64,13 +66,15 @@ export default function Trabajo({ data }) {
             Logros destacados
           </span>
           <ol className="space-y-2 font-normal text-sm mt-3">
-            {data.logros.map((text) => (
+            {data.logros.map((item) => (
               <li
-                key={text}
-                className="bg-[#ededed] dark:bg-[#1c1d1d] text-[15px] p-2 rounded-md flex gap-2 items-center"
+                key={item.text}
+                className="bg-[#ededed] dark:bg-[#1c1d1d] text-[14px] font-semibold p-2 rounded-md flex gap-2 items-center"
               >
-                <i className="bx bx-code-alt text-black dark:text-green-500 font-bold"></i>
-                {text}
+                <i
+                  className={`${item.icon} text-black dark:text-green-500 font-bold dark:font-normal text-[16px]`}
+                ></i>
+                {item.text}
               </li>
             ))}
           </ol>
