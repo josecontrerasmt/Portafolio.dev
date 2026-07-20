@@ -5,8 +5,8 @@ export default function Trabajo({ data }) {
   const [dropdown, setDropdown] = useState(false);
 
   return (
-    <li className="ml-4 bg-white dark:bg-[#121313] border dark:border-black rounded-md p-5 shadow-sm shadow-black">
-      <div className="absolute w-3 h-3 mt-2 bg-black dark:bg-green-500 rounded-full -start-1.5"></div>
+    <li className="ml-4 bg-white dark:bg-[#121313] dark:border dark:border-black rounded-md p-5 shadow-sm shadow-black">
+      <div className="absolute w-3 h-3 mt-2 bg-black dark:bg-green-500 rounded-full -inset-s-1.5"></div>
       <div className="flex justify-between gap-2 items-center mb-2.5">
         <h3 className="text-[21px] font-bold text-gray-900 dark:text-green-400">
           {data.titulo}
@@ -41,7 +41,7 @@ export default function Trabajo({ data }) {
         ))}
       </ol>
       <div
-        className={`overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] grid grid-cols-2 transition-all gap-x-5 rounded-md ${dropdown ? "max-h-[800px] overflow-auto pointer-events-auto mt-5" : "max-h-0 overflow-hidden pointer-events-none"}`}
+        className={`overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] scrollbar-none grid grid-cols-2 transition-all gap-x-5 rounded-md ${dropdown ? "max-h-200 overflow-auto pointer-events-auto mt-5" : "max-h-0 overflow-hidden pointer-events-none"}`}
       >
         <div>
           <span className="block text-black dark:text-green-400 text-[18px]">
@@ -95,7 +95,7 @@ export default function Trabajo({ data }) {
       <div className={`w-full flex ${dropdown ? "mt-5" : "mt-2"}`}>
         <button
           onClick={() => setDropdown((prev) => !prev)}
-          className={`ml-auto text-gray-400 p-1 rounded-sm flex gap-0.5 items-center dark:hover:bg-[#212121] dark:hover:text-gray-100 transition-all hover:text-black`}
+          className={`ml-auto text-gray-400 p-1 rounded-sm flex gap-0.5 items-center dark:hover:bg-[#212121] dark:hover:text-gray-100 transition-all hover:text-black cursor-pointer`}
         >
           {dropdown ? (
             <>
