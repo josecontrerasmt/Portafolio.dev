@@ -80,7 +80,7 @@ const experiencia = {
     empresa: "EGAS",
     empresaLink: "https://www.egas.com.mx/",
     tituloFuncion:
-      "Desarrollo de aplicaciones web empresariales para la industria de hidrocarburos y petrolíferos.",
+      "Desarrollo de aplicaciones web empresariales para la industria de hidrocarburos.",
     tecnologias: [
       tecnologias.react,
       tecnologias.nextJs,
@@ -277,7 +277,7 @@ const experiencia = {
     </h2>
     <section class="mt-10 font-semibold w-full mx-auto">
       <ol
-        class="relative flex flex-col gap-5 md:gap-7 border-s border-black dark:border-green-500"
+        class="relative flex flex-col gap-5 md:gap-7 border-s border-black dark:border-green-400"
       >
         <Trabajo data={experiencia.egas} client:load />
         <Trabajo data={experiencia.realidario} client:load />
@@ -294,7 +294,7 @@ const experiencia = {
     <section class="grid md:grid-cols-2 lg:grid-cols-3 mt-10 gap-5">
       {
         proyectos.map((item) => (
-          <div class="w-full bg-white dark:bg-[#121313] dark:border dark:border-black shadow-sm dark:shadow-black p-4 rounded-md flex flex-col justify-between gap-5">
+          <div class="w-full bg-white dark:bg-[#121313] shadow-sm dark:shadow-black p-4 rounded-md flex flex-col justify-between gap-5">
             <div class="space-y-6">
               <img
                 class="object-cover rounded-md h-48 w-full object-bottom"
@@ -310,10 +310,10 @@ const experiencia = {
                 <h3 class="text-xl font-bold text-center text-black dark:text-green-400">
                   {item.tituloProyecto}
                 </h3>
-                <p class="font-normal text-[14px]">{item.descripcion}</p>
+                <p class="font-semibold text-[14px]">{item.descripcion}</p>
               </div>
             </div>
-            <div class="flex justify-end">
+            <div class="flex md:justify-end">
               {/* <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -342,7 +342,9 @@ const experiencia = {
   <div class="mt-20">
     <!--Deseños web-->
     <h2 class="tituloSecundario"><i class="bx bx-paint"></i> UI & UX</h2>
-    <p class="mt-2 font-semibold text-center text-[14px] md:text-lg w-full md:w-[80%] mx-auto">
+    <p
+      class="mt-2 font-semibold text-center text-[15px] md:text-lg w-full md:w-[80%] mx-auto"
+    >
       Algunas interfaces desarrolladas para proyectos personales y
       profesionales, enfocadas en crear experiencias limpias, intuitivas y
       responsivas.
@@ -354,11 +356,5 @@ const experiencia = {
 <style>
   p {
     margin-bottom: 25px;
-  }
-  .tituloSecundario {
-    font-weight: bold;
-    font-size: 1.8em;
-    text-align: center;
-    color: var(--tituloSecundario);
   }
 </style>

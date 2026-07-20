@@ -13,3 +13,10 @@ html.dark {
     0px 0px 0px 1px rgba(255, 255, 255, 0.1);
   --tituloSecundario: #05df72;
 }
+
+.tituloSecundario {
+  font-weight: bold;
+  font-size: 2.1em;
+  text-align: center;
+  color: var(--tituloSecundario);
+}
