@@ -52,7 +52,9 @@ import "../styles/global.css";
   </head>
   <body class="bg-[#E5E3E6] dark:bg-[#151515] mb-16">
     <NavBar />
-    <div class="max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto px-5 md:px-0 text-[#151515] dark:text-white">
+    <div
+      class="max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto px-2 md:px-0 text-[#151515] dark:text-white overflow-hidden"
+    >
       <slot />
     </div>
   </body>
@@ -65,7 +67,7 @@ import "../styles/global.css";
   body {
     background-image:
       linear-gradient(#00000008 1px, transparent 1px),
-      linear-gradient(to right, #00000008 1px, #E5E3E6 1px);
+      linear-gradient(to right, #00000008 1px, #e5e3e6 1px);
 
     background-size: 15px 15px;
   }
