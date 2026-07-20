@@ -99,6 +99,17 @@
 </nav>
 
 <script>
+  window.addEventListener("scroll", () => {
+    const nav = document.getElementById("header-nav");
+    if (nav) {
+      if (window.scrollY > 50) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
+      }
+    }
+  });
+
   const themeToggle = document.getElementById("themeToggle");
   themeToggle?.addEventListener("click", () => {
     document.documentElement.classList.toggle("dark");
@@ -131,11 +142,9 @@
     animation-range: 0 500px;
   }
 
-  @keyframes blur {
-    to {
-      box-shadow: var(--nav-shadow);
-      background: var(--nav-bg);
-      backdrop-filter: blur(8px);
-    }
+  #header-nav.scrolled {
+    box-shadow: var(--nav-shadow);
+    background: var(--nav-bg);
+    backdrop-filter: blur(5px);
   }
 </style>
